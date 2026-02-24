@@ -47,8 +47,10 @@ export const cartResolvers = {
     },
       cartbyprice: (_: unknown, args: { cartId: string, price: string}) => {
       let cart = carts.get(args.cartId);
-      let result = cart && cart.price=="30";
-      return result ?? { id: args.cartId, items: [] };
+      console.log("cart",cart)
+      let result = cart && cart.price==args.price ? cart : { id: args.cartId, items: [] };
+      console.log("Result",result)
+      return result;
     },
       cartbyauthor: (_: unknown, args: { cartId: string, author: string}) => {
       return carts.get(args.cartId) ?? { id: args.cartId, items: [] };
