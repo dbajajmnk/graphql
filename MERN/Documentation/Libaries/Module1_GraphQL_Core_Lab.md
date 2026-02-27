@@ -108,27 +108,7 @@ carts.set("c1", {
 /**
  * STEP 3: Schema Definition (SDL)
  */
-const typeDefs = `
-  type CartItem {
-    productId: ID!
-    quantity: Int!
-  }
 
-  type Cart {
-    id: ID!
-    items: [CartItem!]!
-    price: String!
-    Quantity: Int!
-    publicationDate: String
-    author: String
-    edition: String
-    publisher: String
-  }
-
-  type Query {
-    cart(cartId: ID!): Cart!
-  }
-`;
 
 /**
  * STEP 4: Resolvers
